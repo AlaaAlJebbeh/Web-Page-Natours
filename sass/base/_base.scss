@@ -1,0 +1,41 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //1rem = 10px
+  font-size: 62.5%; /* 100% 16px if user didn't change anything by defalut but 16/10 = 62.5% makes the default size is 10px*/
+
+  @include respond(tab-land) {
+    font-size: 56.25%; //1 rem = 9px
+  }
+  @include respond(tab-port) {
+    font-size: 50%; //1 rem = 8px
+  }
+  @include respond(phone) {
+    font-size: 30%; // 1
+  }
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+
+}
+
+::selection {
+  background-color: $primary-color-light;
+  color: $color-white;
+}

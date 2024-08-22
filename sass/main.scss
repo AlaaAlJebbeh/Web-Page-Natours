@@ -25,21 +25,7 @@
 @import "./layout/footer";
 @import "./layout/navigation";
 
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
 
-html {
-  font-size: 62.5%; /* 100% 16px if user didn't change anything by defalut but 16/10 = 62.5% makes the default size is 10px*/
-}
-
-body {
-  box-sizing: border-box;
-}
 
 
 

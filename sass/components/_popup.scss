@@ -11,6 +11,13 @@
   visibility: hidden;
   transition: all 0.3s;
 
+  @supports(-webkit-backdrop-filter: blur(10px) or (backdrop-filter:blur(10px))){
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter:blur(10px);
+    background-color: rgba($color-black, .3);
+     
+  }
+
   &__content {
     @include absCenter;
     width: 75%;
@@ -28,6 +35,11 @@
   &__left {
     width: 33.3333333%;
     display: table-cell;
+
+    @include respond(tab-land){
+      width: 100%;
+      display: block;
+    }
   }
 
   &__right {
@@ -35,11 +47,30 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+
+    @include respond(tab-land){
+      width: 100%;
+      display: block;
+    }
   }
 
   &__img {
     display: block;
     width: 100%;
+
+    @include respond(tab-land){
+      width: 48%;
+      height: 30rem;
+      display: inline-block;
+      margin-left: 1rem;
+    }
+
+    @include respond(phone){
+      width: 100%;
+      height: 30rem;
+      display: block;
+      transform: translateX(-1rem);
+    }
   }
 
   &__text {
